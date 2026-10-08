@@ -1,0 +1,457 @@
+{
+  "upstream": "https://github.com/lmwilki/civ6-mcp",
+  "source_commit": "9e3c31f5459ed65503ee12820eaf799807e25eb1",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "40c32a6e35563029c0fb14cd07de77c9dbf006606646d07b1e25080742a09ce0"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "5bab5302ba7c946a9ffd6d0e7c9d2056acf93f9838babbda4a88fff724ecd072"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "69057afddc892fad2274ed7d7b11ac61353d5a21d27f3de9b3a4870874c57681"
+    },
+    {
+      "path": "scripts/analyze.py",
+      "sha256": "28ef60f71cd833a55f3c0d81c406d0d4d7c830ee3a505bc791dfeac51e755dcb"
+    },
+    {
+      "path": "scripts/civbench_data.py",
+      "sha256": "2d3c954bd500c47a36378e85e9b8c55777a715d549ac39a903ba4c7ea5fc005c"
+    },
+    {
+      "path": "scripts/codex_campaign_report.py",
+      "sha256": "cd2c06502ae62e90efd62b4b240579447002d4a48e80257eb34f609c830edb52"
+    },
+    {
+      "path": "scripts/codex_readonly_check.py",
+      "sha256": "b585e19b16f25dc67c6332dead54e7f378108a1a2217a22ec7ebc6ce929af42a"
+    },
+    {
+      "path": "scripts/codex_runtime_mod_check.py",
+      "sha256": "477cccb0975572e7cb425cea9655d0c0f16c1e2d44fb8c983dce2aaa284295db"
+    },
+    {
+      "path": "scripts/codex_ui_acceptance.py",
+      "sha256": "091ba22253a61cef6281979da84329558f7b4dbd5b958db86a978e6853fd8b88"
+    },
+    {
+      "path": "scripts/convex_sync.py",
+      "sha256": "3288e4dd2036949ba231a9b9a2d0dbd83562b0cc0f5012425051d6c693dfb431"
+    },
+    {
+      "path": "scripts/extract_tool_docs.py",
+      "sha256": "902400118a54c5a4556730adae9505e4cc7b0f063f73378792ce9feccefb33d4"
+    },
+    {
+      "path": "scripts/generate_sas_token.py",
+      "sha256": "ab42da4a6d1953d3ba394a23498e668e94c64bb634f9d3d2cb2952045831f36e"
+    },
+    {
+      "path": "scripts/install_saves.py",
+      "sha256": "3c09c867caf4a686c04db014d849b760953e0438a40d17254b5f9c8cf4f8de5b"
+    },
+    {
+      "path": "scripts/launch_save.py",
+      "sha256": "3da04fe851713bc44a748aa84b9778ea68376f187f29d8a1777edf944fde2a50"
+    },
+    {
+      "path": "scripts/menu_audit.py",
+      "sha256": "49b4bcd8cd22e966bb9e9def10798df2d912a20038f78d889c714a25b90217ec"
+    },
+    {
+      "path": "scripts/native_acceptance_service.py",
+      "sha256": "c55ddf2bcf6fdcea0b3c84a518740f890398bf4c4722b364c6a0d63b31a302e8"
+    },
+    {
+      "path": "scripts/native_ai_snapshot.py",
+      "sha256": "ab925a00d288ce08c55c9e86b6f5a260c9bf27f5f1c8146cf41e5ed7654b4ebd"
+    },
+    {
+      "path": "scripts/orchestrator.py",
+      "sha256": "49caa9e3017831c6e8e0537f412b17744f07915de9c2713ac3925cb2921f1671"
+    },
+    {
+      "path": "scripts/orchestrator/__init__.py",
+      "sha256": "058e664b365047d87ad219bf4b775960a7730a53650cad5f9442c54fe7a3b46f"
+    },
+    {
+      "path": "scripts/orchestrator/alert.py",
+      "sha256": "90f6ec32f9f3e0746884a0c95c545093b6a0d2bbfd600d845f7d9d40c3b6d066"
+    },
+    {
+      "path": "scripts/orchestrator/config.py",
+      "sha256": "41908e774dc9a830ce38a42294f9516c1de09464110c2026bb058b2d017cf757"
+    },
+    {
+      "path": "scripts/orchestrator/dispatch.py",
+      "sha256": "c096f2af04faece4f80ffc52c82261a2459e3194594b1f57102106ee1931f074"
+    },
+    {
+      "path": "scripts/orchestrator/eta.py",
+      "sha256": "36df018d06db882d76d99a5cc78ac7d2a64a864775065c70ed0f1c9404efe682"
+    },
+    {
+      "path": "scripts/orchestrator/health.py",
+      "sha256": "3f912982aaab161f2a6d18da43e500b683e4181a2e4d9e0a0f6d81dbde943e00"
+    },
+    {
+      "path": "scripts/orchestrator/machine.py",
+      "sha256": "8fcfa4d1455dfd411ca6b638b478791241e8143a469b86398ddb97a6ea4e51d0"
+    },
+    {
+      "path": "scripts/orchestrator/state.py",
+      "sha256": "3bbb0d90828e064222e20fba084d0a17b5ce08696918ca532b038c147d508057"
+    },
+    {
+      "path": "scripts/parse_save.py",
+      "sha256": "9109b519ea0e16369c788b6312809c8329cfc9f411cfcee604a9036221d6c625"
+    },
+    {
+      "path": "scripts/publish_hf/__init__.py",
+      "sha256": "e1baf72a38809f9e42028b2ebfdd2289ec4304db8fe69322ee6a876a4b9a3bfb"
+    },
+    {
+      "path": "scripts/publish_hf/croissant.py",
+      "sha256": "f35c473eeb267a0f0d010983b756b16430463ce76f63c0470d125c207e264bad"
+    },
+    {
+      "path": "scripts/publish_hf/download.py",
+      "sha256": "81b650c4878865483aa2924b8cfed0fa108221048ed7ca4907de5e61f5251530"
+    },
+    {
+      "path": "scripts/publish_hf/export_tables.py",
+      "sha256": "c4ee7e29449dfa16ba95f6f84470d0aacb069185184b0c6dc90097b0e41052f2"
+    },
+    {
+      "path": "scripts/publish_hf/hashing.py",
+      "sha256": "d8af49a42663cbe6f1422b40043a656a4abb8a3aa5f813bf2eb80d2f88f5a7d0"
+    },
+    {
+      "path": "scripts/publish_hf/push.py",
+      "sha256": "2797b798ad53c6cf4808da35db8d92a34bc0550d9bd799f3716b220e1a9504b4"
+    },
+    {
+      "path": "scripts/publish_hf/validate.py",
+      "sha256": "b82edbe0c255d09626a35ec1547d2ed92bbb0c628af8b0226c7b4dd1f0aa3cda"
+    },
+    {
+      "path": "scripts/publish_hf_dataset.py",
+      "sha256": "abc29019ae26b459ec2a206f6d17c81f42edb54fc46f604650169b6b8caafb13"
+    },
+    {
+      "path": "scripts/scrape_wiki_images.py",
+      "sha256": "c000c170a6e76e3abd2663e676fb03f5b84aec6ee61f78b89669cd066d3fc30c"
+    },
+    {
+      "path": "scripts/split_game_log.py",
+      "sha256": "82245e8e02707df68ddf2ad90feef0b00a964eb60cee27ea259bb11c55e03a94"
+    },
+    {
+      "path": "scripts/test_connection.py",
+      "sha256": "d460a6d77ef6716352db78ad1d9e2cc60f6fb1ff56a45770839039817c28f6fa"
+    },
+    {
+      "path": "scripts/test_game_state.py",
+      "sha256": "ec125e1b1f1b626bba0e691bcfeca048c09dd1a43dcf0976428ef0eb671976ed"
+    },
+    {
+      "path": "scripts/test_queries.py",
+      "sha256": "6a1c698573a9dc62a7fe0f4dbb728e4aa7e195c4d8eced801ad227b06e5bfd84"
+    },
+    {
+      "path": "src/civ_mcp/__init__.py",
+      "sha256": "66734c705dfdedae9c281f128ddafffdcd2710ce8cf2ff92d41ea6adffe68495"
+    },
+    {
+      "path": "src/civ_mcp/__main__.py",
+      "sha256": "5715f009de39b15dfe19a8bbb7e1db607568e9ec8fd6dd64d7cf1d6c46d121b8"
+    },
+    {
+      "path": "src/civ_mcp/autosave.py",
+      "sha256": "179d0008d8f8af20db4dffe1a3294cff32481fd509413b8c81dee6d70a17fd3a"
+    },
+    {
+      "path": "src/civ_mcp/campaign_probe.py",
+      "sha256": "eabf5e980b0385647dc24642afaf96078936ea1b9aef051e6e0b54dd50f1b0b4"
+    },
+    {
+      "path": "src/civ_mcp/connection.py",
+      "sha256": "6d9b10d2e1360a055e18579fd5cbdbf88b184efdd81a2166f4d1253c660c5a01"
+    },
+    {
+      "path": "src/civ_mcp/diary.py",
+      "sha256": "a7b7e027574c1932ee001d849ffa9adf178534d4afccaa79070a7d79c201a729"
+    },
+    {
+      "path": "src/civ_mcp/end_turn.py",
+      "sha256": "93cae6a9b3c0c551daae1a9662e33e88dc60f38a9c834742236e182503f77f8d"
+    },
+    {
+      "path": "src/civ_mcp/game_launcher.py",
+      "sha256": "b4dd99664495bc9aa234cc023a3655804fe926e226b852f32068251c6f793069"
+    },
+    {
+      "path": "src/civ_mcp/game_lifecycle.py",
+      "sha256": "e1bda0755c52ca124b30fdf7ab15a4a506f6c9fe382013c6557b2f1bd9f17e7f"
+    },
+    {
+      "path": "src/civ_mcp/game_over_watchdog.py",
+      "sha256": "f8b72f023d94d3112a57dc98d5fd0f77dce76617e1321d03aa18d05a6db273fa"
+    },
+    {
+      "path": "src/civ_mcp/game_state.py",
+      "sha256": "345f8deee5950e9421702a8bd1b6fc996d05844482fdec97368cf2377967037e"
+    },
+    {
+      "path": "src/civ_mcp/heartbeat.py",
+      "sha256": "ef02176b106b073e63b828db648b136d99b72016a50e787309ab625afccb9a51"
+    },
+    {
+      "path": "src/civ_mcp/logger.py",
+      "sha256": "db38b15b2e51bc602abb88273a7513c0d2dc43cc9fbd0bc697ea8cc12ff6c813"
+    },
+    {
+      "path": "src/civ_mcp/lua/__init__.py",
+      "sha256": "616e193d6dcbd967c24a5a873049aae84a1192f1dd2ac424e7d5ccec41d7b0fe"
+    },
+    {
+      "path": "src/civ_mcp/lua/_helpers.py",
+      "sha256": "6b64453bbb04ee52dbe9cfd6eb19861e892bbeef383b3e2067c5cf49a933f7ed"
+    },
+    {
+      "path": "src/civ_mcp/lua/cities.py",
+      "sha256": "958267a9bab39ef508f0d46ac8706e6327399959a960dcaee1d206041863b66e"
+    },
+    {
+      "path": "src/civ_mcp/lua/congress.py",
+      "sha256": "31d917ac519d1f58bf27b501df30001e4a85835426ed2cd5fb03f044ac91d6b0"
+    },
+    {
+      "path": "src/civ_mcp/lua/diplomacy.py",
+      "sha256": "75efbeecd45ca24e3dbb74d6a3dba283a9095d150ab8e920d659782a4201a4e6"
+    },
+    {
+      "path": "src/civ_mcp/lua/economy.py",
+      "sha256": "7bddb87647606ebf6c854cede3e6937beb8d0e938dab5b4dcf36699915e56439"
+    },
+    {
+      "path": "src/civ_mcp/lua/espionage.py",
+      "sha256": "fef1628634a29387492105614eab8b70d9b604b2d98f8f7ecbe4c84f457e775d"
+    },
+    {
+      "path": "src/civ_mcp/lua/governance.py",
+      "sha256": "c5d0adfdc35c20ab113937eb60ec70030c170f5e259c861a8d4af4ab69c1c6a7"
+    },
+    {
+      "path": "src/civ_mcp/lua/great_people.py",
+      "sha256": "b5b6b5b96eec7127bc74f99e54dbb6fa8ca030fa681d04f9f04b1db5fac89d62"
+    },
+    {
+      "path": "src/civ_mcp/lua/map.py",
+      "sha256": "4ce0f6e40a03e80d203d86d5756de95149d27ac33a0ec63eeef8a86dd178c03a"
+    },
+    {
+      "path": "src/civ_mcp/lua/models.py",
+      "sha256": "b75d51654eb9214a7a7594d1f0f449a1c4c961d6c1f0530ca59880338895bb24"
+    },
+    {
+      "path": "src/civ_mcp/lua/notifications.py",
+      "sha256": "7c792d702481718e6b097e0b0f15858dc3ceaeea85c14e14d9a1fb89cd9fecbf"
+    },
+    {
+      "path": "src/civ_mcp/lua/overview.py",
+      "sha256": "57030ad24243fb902ea0f44dd2c2e4feac91f51deb25eb1721cce922a938f8cf"
+    },
+    {
+      "path": "src/civ_mcp/lua/religion.py",
+      "sha256": "97593a6225a33666032c82e6475e614a46c020a92f6adbf72a2e27094bb99583"
+    },
+    {
+      "path": "src/civ_mcp/lua/tech.py",
+      "sha256": "1ef61d831fae58e8b4f65c9ccaa7afa590058b194e153ede2aab2f864122167b"
+    },
+    {
+      "path": "src/civ_mcp/lua/units.py",
+      "sha256": "c0dfdd3d9c54fa6ef1c4e8e57968c855b48b362fee0395bc158978cca1ee24aa"
+    },
+    {
+      "path": "src/civ_mcp/lua/victory.py",
+      "sha256": "8a89c8e6b925684f386b89b3add61a0e28e452a9e74d49e7accf9cf8592a90f4"
+    },
+    {
+      "path": "src/civ_mcp/map_capture.py",
+      "sha256": "5779f6c5d406d7b1cc04ebaee9b0443493057149e01541e2f5f42fea8239527a"
+    },
+    {
+      "path": "src/civ_mcp/narrate.py",
+      "sha256": "1e8153a80e1a040ee82ca6e52b97b42df8c323e1a4d56559735b4b27eebe69e9"
+    },
+    {
+      "path": "src/civ_mcp/native_load.py",
+      "sha256": "022407d98a672d88de7017d66edc67eb4275ed61b2c01259603114c4a178f405"
+    },
+    {
+      "path": "src/civ_mcp/native_popups.py",
+      "sha256": "7c6a9834a6a17ec4b63eff4f8612e8e6a92c2e7957e82e7f1a691f2069af0cf0"
+    },
+    {
+      "path": "src/civ_mcp/native_session.py",
+      "sha256": "acc8dbc4c9abc39f4291a691947ac56dda08d29c57c1032a6a83b52bd05bbdc8"
+    },
+    {
+      "path": "src/civ_mcp/native_turn.py",
+      "sha256": "d950726b6f3bdf978f071441449a56a7b2359bc68b544dc0deb71b705c3e8845"
+    },
+    {
+      "path": "src/civ_mcp/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/civ_mcp/run_id.py",
+      "sha256": "3a4e42abd9dc6c4d1ddbde8abfa90365d0834c9c4df39a9226b6c23075009239"
+    },
+    {
+      "path": "src/civ_mcp/server.py",
+      "sha256": "2f7ea7a5c18e994e99f88b2316991cc938f1e2513e492b1601d2329a46cb0303"
+    },
+    {
+      "path": "src/civ_mcp/spatial.py",
+      "sha256": "978db27daff9e3c3457e2f075b3437cbad4dfc7992e02b5870ef932c83551362"
+    },
+    {
+      "path": "src/civ_mcp/spectator.py",
+      "sha256": "571d8af17d1effdc72a6733dc3e7f488850f9564dbea19f8c1ba6ec53e78f1f6"
+    },
+    {
+      "path": "src/civ_mcp/telemetry.py",
+      "sha256": "e06cd8576976f765bb2a663a7aa61f029f11465402672e58a0ce4bb5f0183413"
+    },
+    {
+      "path": "src/civ_mcp/tuner_client.py",
+      "sha256": "cc719596cc4d3d85823d6161fc46b7bd183330d5841bd76dd4ef27f966febaa6"
+    },
+    {
+      "path": "src/civ_mcp/version.py",
+      "sha256": "3ab1bd6989d137aec8192bd5350d4763c433961c0a8b56e28410cf06a88b5b62"
+    },
+    {
+      "path": "src/civ_mcp/web_api.py",
+      "sha256": "84edad255b7bd012a6e6b0635da784fa85d0c7fc1545fb62fa9e597fb47f6963"
+    },
+    {
+      "path": "tests/test_advisor_budget.py",
+      "sha256": "d63e0bedcf314952423ac58308f6b8484fb13acc4f5298d1951682e507f624e6"
+    },
+    {
+      "path": "tests/test_campaign_probe.py",
+      "sha256": "6af975b9069bfc797103ec34eda525d5e1dfa69ac6bbcdb3984a52cbb1463ff3"
+    },
+    {
+      "path": "tests/test_campaign_report.py",
+      "sha256": "aa554ea1b6dfb58b8a4ae3a9ebc2aa83039bc6942f4dd8ed266dbb0466c6e52c"
+    },
+    {
+      "path": "tests/test_connection_exclusive.py",
+      "sha256": "52a3b8e38d66340b3f8b2ca0d836a96fd85e611b8d2a99830b4cc12ac2e04804"
+    },
+    {
+      "path": "tests/test_convex_sync.py",
+      "sha256": "3b93a1531170713aed2f9bcd2f39e5fbd9cf285500aa0e65717b788696554196"
+    },
+    {
+      "path": "tests/test_hang_recovery.py",
+      "sha256": "e969208954fe73284752618eda950c0ccfc5ead7e7852f1aa893098cc8c02363"
+    },
+    {
+      "path": "tests/test_launcher_localization.py",
+      "sha256": "8b2bdc53b85469463e1f681e1d54d54812e5febdba05ca32e1a3c24760d96c66"
+    },
+    {
+      "path": "tests/test_native_acceptance.py",
+      "sha256": "33fc175ae2c40f8e43c65ac56f3058a63edaba329070f8059c875c2b504d9ba1"
+    },
+    {
+      "path": "tests/test_native_load.py",
+      "sha256": "023b8ca951644180e088a95f2344adb1b561237dde5e0f3651e327023676171e"
+    },
+    {
+      "path": "tests/test_native_popups.py",
+      "sha256": "1ccff57597762d8452d9baaabb3a7581d04c08d3713a8baaafd4aa42ee27cf75"
+    },
+    {
+      "path": "tests/test_native_session.py",
+      "sha256": "c10b08dcc8d911125dccb8110901d064d8f28d4808ca78401c8252f3631781ce"
+    },
+    {
+      "path": "tests/test_native_turn.py",
+      "sha256": "9beacec252e18c6f662564e3d50b3de01c4f4d214346d791ccb8bc9c6e06b9c1"
+    },
+    {
+      "path": "tests/test_orchestrator_machine.py",
+      "sha256": "60d8acdc38431640607854f07babac4b1dd207ca17b54d3082de394382051c2d"
+    },
+    {
+      "path": "tests/test_overview_query.py",
+      "sha256": "2ae2d21ff6fab00f270b2d0fa679aaf7d45a657e32b8bf6b371630522459a07b"
+    },
+    {
+      "path": "tests/test_parsers.py",
+      "sha256": "39e18b3248413c798f2b47115c1b6bd78e5a673411e0a6a58d2ef999bf2c172c"
+    },
+    {
+      "path": "tests/test_readonly_check.py",
+      "sha256": "51f155c09ee2900fae57e5ffcc9842da0e262984bf2cdd7de0dee037cc7c0dd9"
+    },
+    {
+      "path": "tests/test_run_id.py",
+      "sha256": "a82ab99c83c1028ce2d5bf66ac7dac7e41cf33c64b40afb80927adbbfa915c8e"
+    },
+    {
+      "path": "tests/test_runtime_mod_check.py",
+      "sha256": "e3b411a8225df453695c24c4e5da651ff96cb6af4369fc2030b07e2d64f4848d"
+    },
+    {
+      "path": "tests/test_save_scumming.py",
+      "sha256": "80ff26c7808d708c999387dd756976436a13380cd7fbee82aa4e90e8bea70e5a"
+    },
+    {
+      "path": "tests/test_server_autoboot.py",
+      "sha256": "6606b7207375f2b4e4f146b0de20bf0aba7422561738e63a8efe7ad48bfddfa0"
+    },
+    {
+      "path": "tests/test_set_city_production.py",
+      "sha256": "4ad161582f8fd05a16651e92e1f7d6385bc51a304f28b29c5984302cb9d2a13b"
+    },
+    {
+      "path": "tests/test_ui_acceptance.py",
+      "sha256": "e5cf2160267c7e2772d3c3f5af30f6e32482805a6cfd9b8eb8a134303854a2a2"
+    },
+    {
+      "path": "tests/test_victory_query.py",
+      "sha256": "867b5043fe4507837cd4f2852e3e57df437d675691ae801d2e589cae447094fa"
+    },
+    {
+      "path": "tests/test_web_api_helpers.py",
+      "sha256": "2d212f49f66ea0e713a21062e13f1800311e09c7761d6de7ef79161cb7bd384a"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "71d98b478567beafc5761c3418593dc38d74f1fe389bff52267acd2c9b0b7f0c"
+    }
+  ],
+  "excluded": [
+    "Git history",
+    "game saves",
+    "game assets",
+    "logs",
+    "private project state",
+    "local client settings",
+    "native evidence",
+    "web dashboard",
+    "evaluation datasets"
+  ]
+}
