@@ -16,4 +16,6 @@ Fresh Windows Python 3.14 environment: 206 offline tests passed. Initial unconst
 
 ## Next steps and unresolved issues
 
-Create/push the public repository and preserve a recoverable local bundle/archive. Live mod feature completion continues in the four GrandCampaign projects. Platform/general gameplay coverage and natural-wonder movie acceptance remain limited as documented. Source/content scanning is a bounded check, not proof against every possible secret format.
+Published public repository and v0.1.0 Beta release, including wheel, sdist and SHA256SUMS. Release source commit: 449fb19bbe4ae12611a2681669f4a51a632cb524. GitHub Actions run 37780832334 completed successfully on Python 3.12 Windows/Linux. The release is tagged and the local complete Git bundle was verified. Publication is complete; future source changes require new scoped verification and a new version.
+
+Live mod feature completion continues in the four GrandCampaign projects. Platform/general gameplay coverage and natural-wonder movie acceptance remain limited as documented. Source/content scanning is a bounded check, not proof against every possible secret format.
