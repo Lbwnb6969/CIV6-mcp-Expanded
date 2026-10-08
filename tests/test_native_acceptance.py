@@ -84,6 +84,9 @@ class ProbeConnection:
     async def ensure_connected(self):
         pass
 
+    async def refresh_lua_states(self):
+        pass
+
     async def execute_in_state_once(self, index, code, timeout):
         self.sent.append((index, code))
         return ["[GC_PREFLIGHT] READY"] if index == 9 else ["[GC_HTTP] OK"]
@@ -104,6 +107,53 @@ def test_endpoint_checks_origin_run_and_unique_state_before_send():
     with client_for(conn, host="192.0.2.1") as client:
         assert client.post("/api/test/native-lua", json=body).status_code == 403
     assert conn.sent == []
+
+
+def test_menu_transition_removes_old_game_index_before_any_probe():
+    conn = ProbeConnection()
+    async def discover_menu():
+        conn.lua_states = {7: "LoadGameMenu", 8: "FrontEnd"}
+    conn.refresh_lua_states = AsyncMock(side_effect=discover_menu)
+    with client_for(conn) as client:
+        response = client.post("/api/test/native-lua", json={
+            "state": "GameCore_Tuner", "code": "mutate()", "read_only": False,
+            "expected_run": "GC_ACCEPTANCE"})
+    assert response.status_code == 409
+    assert conn.sent == []
+    conn.refresh_lua_states.assert_awaited_once()
+
+
+def test_probe_uses_fresh_game_index_after_menu_load():
+    conn = ProbeConnection()
+    async def discover_game():
+        conn.lua_states = {7: "LoadGameMenu", 21: "GameCore_Tuner", 9: "InGame"}
+    conn.refresh_lua_states = AsyncMock(side_effect=discover_game)
+    with client_for(conn) as client:
+        response = client.post("/api/test/native-lua", json={
+            "state": "GameCore_Tuner", "code": "read()", "read_only": True})
+    assert response.status_code == 200
+    assert [index for index, _ in conn.sent] == [21]
+
+
+def test_state_refresh_reuses_socket_and_clears_discovery_on_failure(monkeypatch):
+    async def run():
+        conn = GameConnection()
+        conn.ensure_connected = AsyncMock()
+        conn.reconnect = AsyncMock()
+        conn._reader, conn._writer = object(), object()
+        handshake = AsyncMock(side_effect=[
+            ("Civ6", ["7", "LoadGameMenu", "21", "GameCore_Tuner", "22", "InGame"]),
+            ("<no response>", [])])
+        monkeypatch.setattr(tuner_client, "handshake", handshake)
+        await conn.refresh_lua_states()
+        assert conn.gamecore_index == 21 and conn.ingame_index == 22
+        assert conn.lua_states[7] == "LoadGameMenu"
+        with pytest.raises(ConnectionError, match="no Lua states"):
+            await conn.refresh_lua_states()
+        assert conn.lua_states == {} and conn.gamecore_index is None and conn.ingame_index is None
+        conn.reconnect.assert_not_awaited()
+        assert handshake.await_args.args == (conn._reader, conn._writer)
+    asyncio.run(run())
 
 
 def test_turn_advance_rejects_unidentified_run_before_any_native_call():

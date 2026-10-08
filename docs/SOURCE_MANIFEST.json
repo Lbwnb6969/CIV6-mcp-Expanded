@@ -453,5 +453,30 @@
     "native evidence",
     "web dashboard",
     "evaluation datasets"
+  ],
+  "patches": [
+    {
+      "version": "0.1.1",
+      "purpose": "Refresh native Lua contexts on the sole socket and restrict default pytest collection to offline tests",
+      "files": [
+        {
+          "path": "src/civ_mcp/connection.py",
+          "sha256": "e5ee81556085938dfa73b04f42f70654586294cca0f1c932a71d1c6f7a100cab"
+        },
+        {
+          "path": "src/civ_mcp/web_api.py",
+          "sha256": "5c307b9297e22b4f55c3949d8d4254ccfdc2dff7ca77ca10b29151130e141633"
+        },
+        {
+          "path": "tests/test_native_acceptance.py",
+          "sha256": "b835f9cc2cdc2016685197f50156489621be9e5d147b429f57aa34de99ed5177"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "28a1f3b42f940b6fe5d61b0a395b498ccc44b8fc9bb343bbac2873250c1d8c53"
+        }
+      ],
+      "validation": "209 offline tests passed; updated discovery native acceptance pending"
+    }
   ]
 }

@@ -29,6 +29,8 @@ Example developer Lua read:
 
 `read_only` is an intent label, not a security sandbox. Never submit code from an untrusted document. Mutating requests require `read_only:false` and a matching `expected_run`. Select a unique exact context name; ambiguous contexts are rejected. The API records code SHA-256 and a completion marker. An HTTP success alone does not establish that a requested effect occurred; inspect `lua_ok`, receipts, and actual game state.
 
+From 0.1.1, the native Lua endpoint refreshes the context list on the same exclusive FireTuner socket before resolving the requested name. Moving from a game to a menu can reuse old numeric indexes even while the socket remains connected. A disappeared or ambiguous context returns HTTP 409 before any probe Lua is sent. Run/single-player guards remain necessary because discovery cannot freeze a human's subsequent world transition. This refresh does not replay uncertain writes or open a second connection.
+
 Load body: `{"save_name":"GC_MY_DISPOSABLE_TEST_SAVE"}`. First leave the independent game through an authorized game lifecycle operation. The loader must find the native front end and verify mod requirements; it has no menu-click or OCR fallback. After load, verify the actual run and turn.
 
 An uncertain turn remains pending. Inspect its native core/UI state and blocking notifications; do not issue another turn request to compensate. Across a service restart preserve the pending marker with `--pending-run GC_MY_DISPOSABLE_TEST --pending-turn N`. This marker does not replay the engine command.

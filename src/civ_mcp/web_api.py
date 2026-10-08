@@ -929,7 +929,7 @@ def create_app(gs: GameState) -> FastAPI:
         conn = request.app.state.gs.conn
         started = time.perf_counter()
         async with conn.exclusive():
-            await conn.ensure_connected()
+            await conn.refresh_lua_states()
             matches = [i for i, n in conn.lua_states.items() if n == state]
             if len(matches) != 1:
                 raise HTTPException(status_code=409, detail="state missing or ambiguous; refresh contexts")

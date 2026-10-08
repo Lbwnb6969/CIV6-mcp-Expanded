@@ -73,7 +73,14 @@ class GameConnection:
             self._reader, self._writer
         )
         log.info("Connected: %s", app_identity)
+        try:
+            self._set_lua_states(raw_states)
+        except ConnectionError:
+            await self.disconnect()
+            raise
 
+    def _set_lua_states(self, raw_states: list[str]) -> None:
+        """Replace indexes atomically after each menu/game discovery."""
         # Parse state list: alternating [index_number, state_name] pairs
         self.lua_states = {}
         self.gamecore_index = None
@@ -99,8 +106,24 @@ class GameConnection:
             self.ingame_index,
         )
         if not self.lua_states:
-            await self.disconnect()
             raise ConnectionError("FireTuner handshake returned no Lua states; native connection unavailable")
+
+    async def refresh_lua_states(self) -> None:
+        """Rediscover contexts on the sole socket before selecting a probe.
+
+        Players can change worlds while the TCP connection stays alive. A
+        previously valid index can then identify a different menu context.
+        Discovery sends no Lua and never retries an unknown command.
+        """
+        await self._wait_for_exclusive()
+        await self.ensure_connected()
+        async with self._lock:
+            # Clear stale indexes even if the read-only discovery fails.
+            self.lua_states = {}
+            self.gamecore_index = None
+            self.ingame_index = None
+            _, raw_states = await tuner_client.handshake(self._reader, self._writer)
+            self._set_lua_states(raw_states)
 
     async def disconnect(self) -> None:
         if self._writer and not self._writer.is_closing():

@@ -9,7 +9,7 @@ Civilization VI MCP server with native game diagnostics and controlled mod accep
 - Gameplay queries and commands for units, cities, research, diplomacy, religion, trade, and victory progress.
 - Local HTTP queries sharing one resident FireTuner connection.
 - GrandCampaign state and mod diagnostics; the GrandCampaign mods themselves are not included or required for ordinary queries.
-- An isolated native acceptance service: exclusive process lock, bounded turns, native GC_ test-save loading, exact Lua-context selection, request hashes, completion receipts, and no automatic replay of uncertain writes.
+- An isolated native acceptance service: exclusive process lock, bounded turns, native GC_ test-save loading, fresh Lua-context discovery on the sole socket, request hashes, completion receipts, and no automatic replay of uncertain writes.
 - Optional native informational popup closure for tech/civic completion, disasters, projects, and world/natural wonders. This uses the game's original ESC handlers and requires explicit opt-in per request.
 
 The legacy gameplay launcher retains upstream OCR/menu automation. Use the **native acceptance service** below when screen interaction must be excluded. Arbitrary Lua is privileged developer access: `read_only` labels caller intent and does not sandbox code. Use only trusted local clients.
