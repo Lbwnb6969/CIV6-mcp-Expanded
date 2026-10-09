@@ -71,7 +71,9 @@ print("{SENTINEL}")'''
             # A transition can close this state after dispatch. Only inspect.
             pass
         from civ_mcp.game_lifecycle import _wait_for_loaded_game
-        if await _wait_for_loaded_game(conn, timeout=25.0):
+        # YnAMP giant saves can finish after the former 25-second window.
+        # Keep observing the one dispatched load; never send it again.
+        if await _wait_for_loaded_game(conn, timeout=120.0):
             # Only a native GC_ world reached through this exact dispatch can
             # complete the front-end intent. Persisted unknown intents survive.
             verified=await conn.execute_in_state_once(conn.ingame_index,f'''

@@ -45,6 +45,24 @@ def test_native_load_dispatches_once_and_failure_has_no_menu_control_or_retry():
     assert all(name not in code for name in ("ContextPtr", "Controls", "UIManager", "OnLoadYes", "debug.setupvalue"))
 
 
+def test_large_save_keeps_observing_original_dispatch_past_old_window():
+    conn = Connection()
+
+    async def complete_after_large_load(connection, *, timeout):
+        # The old 25s budget reproduces the real giant-save false negative.
+        assert connection is conn
+        return timeout >= 35.0
+
+    conn.execute_in_state_once.side_effect = [[], ["[GC_LOAD] VERIFIED|GC_NATIVE|1"]]
+    with patch("civ_mcp.game_lifecycle._wait_for_loaded_game", new=complete_after_large_load):
+        result = asyncio.run(load_native_test_save(conn, "GC_NATIVE_BASE"))
+    assert result.startswith("Loading save:")
+    assert conn._native_completed_save_load == "GC_NATIVE_BASE"
+    dispatch = conn.execute_in_state_once.call_args_list[0].args[1]
+    assert dispatch.count("Network.LoadGame(") == 1
+    assert conn.execute_in_state_once.await_count == 2
+
+
 def test_native_load_cannot_accept_normal_save_or_replace_active_game():
     conn = Connection()
     assert "GC_" in asyncio.run(load_native_test_save(conn, "normal-save"))

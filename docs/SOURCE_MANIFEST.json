@@ -477,6 +477,25 @@
         }
       ],
       "validation": "209 offline tests passed; updated discovery native acceptance pending"
+    },
+    {
+      "version": "0.1.2",
+      "purpose": "Observe a single native save-load dispatch for up to 120 seconds so large maps do not receive a false 25-second timeout",
+      "files": [
+        {
+          "path": "src/civ_mcp/native_load.py",
+          "sha256": "69216e18cee1881474be2ab8166d062cd6b7daefe76403b32c166b0a2b28d260"
+        },
+        {
+          "path": "tests/test_native_load.py",
+          "sha256": "bdb928329306eab68e16960e8a8cbb0def621d01ea7c7644b33db111035415df"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "8186827978b8c4643563fd6571bea17a2ce8d394c62ff019dc84390b5016a4ee"
+        }
+      ],
+      "validation": "210 offline source tests and 210 installed-wheel tests passed; resident native 24-civilization YnAMP save confirmed in 50.38 seconds without redispatch; CI result recorded separately"
     }
   ]
 }
