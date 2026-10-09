@@ -24,7 +24,13 @@ if not ExposedMembers then ExposedMembers={{}} end
 local previous=ExposedMembers.GCNativeLoadIntent
 if previous then
     if previous.Name=={completed_lua} and previous.State=="DISPATCHED" then previous.State="COMPLETE" end
-    assert(previous.State=="COMPLETE","Existing native load intent; no replay")
+    -- A query can finish with a definitive local failure before any native
+    -- load was dispatched. Archive those terminal outcomes and permit a new
+    -- named request; an unknown QUERYING/DISPATCHED intent remains a hard
+    -- no-replay barrier because the engine may still be loading it.
+    local terminal=previous.State=="COMPLETE" or previous.State=="NOT_FOUND"
+        or previous.State=="REQUIREMENTS_FAILED" or previous.State=="REJECTED"
+    assert(terminal,"Existing native load intent; no replay")
     local history=ExposedMembers.GCNativeLoadHistory or {{}}
     history[#history+1]=previous
     ExposedMembers.GCNativeLoadHistory=history

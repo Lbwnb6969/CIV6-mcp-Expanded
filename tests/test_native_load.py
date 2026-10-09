@@ -41,6 +41,9 @@ def test_native_load_dispatches_once_and_failure_has_no_menu_control_or_retry():
     assert 'save.Name=="GC_NATIVE.Civ6Save"' in code
     assert "Modding.CheckRequirements" in code
     assert "GameConfiguration.SetToPreGame()" in code
+    assert 'previous.State=="NOT_FOUND"' in code
+    assert 'previous.State=="REQUIREMENTS_FAILED"' in code
+    assert 'previous.State=="REJECTED"' in code
     assert "Network.LeaveGame()" not in code
     assert all(name not in code for name in ("ContextPtr", "Controls", "UIManager", "OnLoadYes", "debug.setupvalue"))
 
@@ -82,3 +85,6 @@ def test_only_verified_native_world_completes_previous_load_receipt():
     assert conn.execute_in_state_once.await_count==2
     completion=conn.execute_in_state_once.call_args.args[1]
     assert "Unexpected native loaded world" in completion and 'receipt.State="COMPLETE"' in completion
+
+
+
